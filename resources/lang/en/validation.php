@@ -130,6 +130,12 @@ return [
     */
 
     'custom' => [
+        'post.title' => [
+            'required' => 'タイトルを入力してください'
+        ],
+        'post.body' => [
+            'required' => '文章を入力してください'
+        ],
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
