@@ -17,7 +17,22 @@
                 </h2>
                 <p class='body'>{{ $post->body }}</p>
             </div>
+            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                @csrf
+                @method("DELETE")
+                <button type=button id = 'delete_btn' onClick='return test_func(this);'>delete</button>
+            </form>
             @endforeach
+            <script>
+                function test_func(e) {
+                    const id_data = 'form_' + '{{ $post->id}}'
+                    'use strict'
+                    const choice = window.confirm('本当に削除してもよろしいですか？');
+                    if (choice){
+                        document.getElementById(id_data).submit();
+                    }
+                }
+            </script>
         </div>
         <div class='paging'>
             {{ $posts->links() }}
