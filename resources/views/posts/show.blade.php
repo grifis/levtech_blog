@@ -10,6 +10,7 @@
         <h1 class='title'>
             {{ $post->title }}
         </h1>
+        <a hfef=''>{{ $post->category->name }}</a>
         <div class='content'>
             <div class="content_post">
                 <p>{{ $post->body }}</p>

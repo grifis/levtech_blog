@@ -21,10 +21,12 @@
             <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                 @csrf
                 @method("DELETE")
-                <button type=button id = '{{ $post->id }}' onClick='return alert_func(this.id);'>delete</button>
+                <button type=button id = 'delete_btn' onClick='return alert_func(this);'>delete</button>
             </form>
             @endforeach
-            <script src="{{ asset('js/alert.js') }}"></script>
+            <script src="{{ asset('/js/alert.js') }}">
+                
+            </script>
         </div>
         <div class='paging'>
             {{ $posts->links() }}
